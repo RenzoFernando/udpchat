@@ -1,0 +1,108 @@
+/* ========================= */
+/* Fondos y tipografía    */
+/* ========================= */
+.root {
+    -fx-font-family: "Inter", sans-serif;
+    -fx-background-color: #ffffff;   /* fondo blanco general */
+    -fx-padding: 16;
+}
+
+/* ========================= */
+/* Inputs y ChoiceBox     */
+/* ========================= */
+.choice-box,
+.text-field {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 4px;
+    -fx-padding: 4 8;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+/* ========================= */
+/* Botones                */
+/* ========================= */
+.button {
+    -fx-background-color: #222222;
+    -fx-text-fill: #ffffff;
+    -fx-background-radius: 4px;
+    -fx-padding: 6 12;
+    -fx-border: none;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+.button:hover {
+    -fx-background-color: #444444;
+}
+
+/* ========================= */
+/* ListView y ScrollPane  */
+/* ========================= */
+.list-view {
+    -fx-background-color: transparent;               /* fondo transparente */
+    -fx-control-inner-background: transparent;       /* fondo interno transparente */
+}
+.list-view .scroll-pane {
+    -fx-background-color: transparent;
+}
+.list-view .scroll-pane > .viewport {
+    -fx-hbar-policy: never;      /* nunca mostrar scroll horizontal */
+}
+.list-view .scroll-bar:horizontal {
+    -fx-opacity: 0;              /* barra invisible */
+    -fx-max-height: 0;
+    -fx-min-height: 0;
+}
+.list-view .scroll-bar:vertical {
+    /* barra TOTALMENTE  invisible */
+    -fx-opacity: 0;
+    -fx-max-width: 0;
+    -fx-min-width: 0;
+    -fx-pref-width: 0;
+    -fx-pref-height: 0;
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+    -fx-padding: 0;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-border-color: transparent;
+    -fx-border-radius: 0;
+    -fx-border-insets: 0;
+    -fx-border-width: 0;
+    -fx-border-style: transparent;
+    -fx-border-image: transparent;
+}
+
+/* ========================= */
+/* Separación de celdas   */
+/* ========================= */
+.list-view .list-cell {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 4 4 4 4;
+}
+
+/* Selección transparente */
+.list-view .list-cell:filled:selected,
+.list-view .list-cell:filled:selected:hover {
+    -fx-background-color: transparent;
+}
+
+/* ========================= */
+/* Burbujas de chat       */
+/* ========================= */
+.chat-bubble {
+    -fx-background-radius: 12px;   /* esquinas redondeadas */
+    -fx-padding: 8 12;             /* espacio interno */
+    -fx-wrap-text: true;           /* texto envuelto automáticamente */
+    -fx-text-overrun: CLIP;        /* cortar al llegar al ancho */
+    -fx-font-size: 14px;
+    -fx-text-fill: #000000;
+    /* El ancho real se controla desde Java con bind al 75% del ListView */
+}
+
+/* Colores por peer */
+.chat-bubble.peer-a { -fx-background-color: #d8b4fe; }  /* morado pastel */
+.chat-bubble.peer-b { -fx-background-color: #93c5fd; }  /* azul pastel   */
+.chat-bubble.peer-c { -fx-background-color: #bbf7d0; }  /* verde pastel  */

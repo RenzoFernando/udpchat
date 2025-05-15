@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="udpchat.ui.PeerController"
+      prefWidth="420" prefHeight="380"
+      stylesheets="@chat.css">
+
+    <HBox spacing="8">
+        <Label text="Soy:"/>
+        <ChoiceBox fx:id="peerChoice">
+            <items><FXCollections fx:factory="observableArrayList">
+                <java.lang.String fx:value="PeerA"/>
+                <java.lang.String fx:value="PeerB"/>
+                <java.lang.String fx:value="PeerC"/>
+            </FXCollections></items>
+        </ChoiceBox>
+        <Button text="¡Listo!" fx:id="btnReady" onAction="#onReady"/>
+    </HBox>
+
+    <ListView fx:id="mensajesList" VBox.vgrow="ALWAYS"/>
+
+    <HBox spacing="8">
+        <Label text="Enviar a:"/>
+        <ChoiceBox fx:id="destChoice"/>
+    </HBox>
+
+    <HBox spacing="8">
+        <TextField fx:id="outMsg" HBox.hgrow="ALWAYS" promptText="Escribe…"/>
+        <Button text="Enviar" onAction="#onSend"/>
+    </HBox>
+
+    <Button text="Limpiar chat" fx:id="btnClear" onAction="#onClear"/>
+    <Button text="Salir" fx:id="btnExit" onAction="#onExit"/>
+</VBox>
